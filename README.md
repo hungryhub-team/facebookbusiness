@@ -1,7 +1,10 @@
 > **HungryHub fork.** This is a fork of
 > [`meta/facebook-ruby-business-sdk`](https://github.com/meta/facebook-ruby-business-sdk)
 > pinned to **v0.16.0.2** (`ruby-2.7` branch), with exactly one change:
-> `required_ruby_version` relaxed from `>= 3.0` to `>= 2.7`.
+> `required_ruby_version` relaxed from `>= 3.0` to `>= 2.7`, and the gemspec's
+> `require './lib/facebook_ads/version'` made CWD-independent (bundler evaluates a
+> git checkout's gemspec from the app directory, where the relative path does not
+> resolve).
 >
 > **Why.** `hh-server` still runs Ruby 2.7.8, and v0.16.0.2 is the last release
 > whose code parses and runs on Ruby 2.7 — every file in this branch passes
