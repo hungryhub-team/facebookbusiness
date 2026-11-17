@@ -1,3 +1,20 @@
+> **HungryHub fork.** This is a fork of
+> [`meta/facebook-ruby-business-sdk`](https://github.com/meta/facebook-ruby-business-sdk)
+> pinned to **v0.16.0.2** (`ruby-2.7` branch), with exactly one change:
+> `required_ruby_version` relaxed from `>= 3.0` to `>= 2.7`.
+>
+> **Why.** `hh-server` still runs Ruby 2.7.8, and v0.16.0.2 is the last release
+> whose code parses and runs on Ruby 2.7 — every file in this branch passes
+> `ruby -c` on 2.7, and the newer releases (0.16.1 upwards, 17.x, 26.x) use
+> Ruby 3 syntax. v0.16.0.2 is also the first release that supports
+> `faraday ~> 2.6`, which is what the Rails 6.1 stack runs on.
+>
+> **What is NOT changed.** The SDK code itself is untouched, so the payload it
+> produces is byte-identical to the released 0.16.0.2 gem.
+>
+> **Updating.** Once the runtime moves to Ruby 3, drop this fork and depend on
+> the released gem again (`gem 'facebookbusiness', '~> 26.0'`).
+
 # Facebook Business SDK for Ruby
 
 ### Introduction
